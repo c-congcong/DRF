@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
     'rest_framework',
+    'app_day2_lx',
+    'app_day2',
+    'app_day3',
+    'app_day3_lx',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +125,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    # 全局异常处理的方法
+    'EXCEPTION_HANDLER': 'utils.exceptions.exception_handler',  # 使用自定的异常
+}
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
